@@ -13,6 +13,8 @@
 # Opens one view. The "Add a view" button clones the current settings into a new window.
 # Views can be closed independently; the program ends with the last of them, or with the
 # window holding the basin controls.
+using Pkg
+Pkg.activate(@__DIR__)  # Ensure project environment is active
 
 using GLMakie
 using PhasedChargeWatershed
@@ -32,7 +34,7 @@ function load_input(path)
 end
 
 function main(args)
-    length(args) == 1 || error("usage: julia --project viewer.jl <data.json | results.jld2>")
+    length(args) == 1 || error("usage: julia viewer.jl <data.json | results.jld2>")
     input_path = args[1]
     isfile(input_path) || error("input file not found: $input_path")
     pd, result, climits = load_input(input_path)

@@ -15,6 +15,9 @@
 #
 # The saved result is read back with `PhasedChargeWatershed.load_result`, and can be
 # opened directly by the viewer: `julia --project viewer.jl output.jld2`.
+using Pkg
+Pkg.activate(@__DIR__)  # Ensure project environment is active
+
 
 using PhasedChargeWatershed
 
@@ -28,7 +31,7 @@ end
 
 function main(args)
     if !(2 <= length(args) <= 4)
-        error("usage: julia --project prewatershed.jl <input.json> <output.jld2> [density_factor] [n_attempts]")
+        error("usage: julia prewatershed.jl <input.json> <output.jld2> [density_factor] [n_attempts]")
     end
     input_path, output_path = args[1], args[2]
     isfile(input_path) || error("input file not found: $input_path")
