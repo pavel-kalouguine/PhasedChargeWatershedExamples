@@ -1,0 +1,3 @@
+[deps]
+GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
+PhasedChargeWatershed = "7ae2c33a-4134-407d-94c5-d28cd08507e6"
