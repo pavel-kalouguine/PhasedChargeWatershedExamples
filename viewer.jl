@@ -1,7 +1,7 @@
 # Command-line launcher for the interactive density viewer.
 #
-#   julia --project viewer.jl path/to/data.json
-#   julia --project viewer.jl path/to/results.jld2
+#   julia viewer.jl path/to/data.json
+#   julia viewer.jl path/to/results.jld2
 #
 # What is drawn follows from the file that is given. A .json holds phased data only, so
 # the density alone is shown; a .jld2 written by prewatershed.jl holds a watershed result

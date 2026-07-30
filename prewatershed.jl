@@ -1,6 +1,6 @@
 # Command-line script running the pre-watershed segmentation.
 #
-#   julia --project prewatershed.jl <input.json> <output.jld2> [density_factor] [n_attempts]
+#   julia prewatershed.jl <input.json> <output.jld2> [density_factor] [n_attempts]
 #
 # Loads the phased data from <input.json>, runs the pre-watershed segmentation on it and
 # saves the resulting `WatershedResult` into <output.jld2> under the key "result". The
@@ -14,7 +14,7 @@
 # parameters, the result being reused later.
 #
 # The saved result is read back with `PhasedChargeWatershed.load_result`, and can be
-# opened directly by the viewer: `julia --project viewer.jl output.jld2`.
+# opened directly by the viewer: `julia viewer.jl output.jld2`.
 using Pkg
 Pkg.activate(@__DIR__)  # Ensure project environment is active
 
